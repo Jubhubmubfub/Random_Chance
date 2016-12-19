@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Random Chance</title>
+    <script type="text/javascript">
+      "use strict";
+      //Make a function that takes a number of quarters (1 quarter = 1 game).
+      //1 in 100 chance to win the slot machine (which will give you between 50-100 coins -use Math.random and Math.floor)
+      //While the user has quarters, use Math.random to determine if they won.
+      //If they win, return the number of quarters remaining (they had 50 and won 90, now they have 140)
+      //return 0 if all quarters are wasted
+      //let the user pass the number of coins they are willling to leave with
+
+      function randomChance(quarters,leaveWith){
+
+        console.log("starting quarters: " + quarters);
+        //try it with a while loop
+        var startingQuarters
+        while (quarters > 0) {
+          var chance = Math.floor(Math.random()*100);
+          if (chance === Math.floor(Math.random()*100)){
+            quarters += Math.floor(Math.random()*50+50);
+            console.log("You won! Remaining quarters: " + quarters);
+          }
+          if (leaveWith <= quarters){
+            return "You've won " + quarters + " quarters, let's call it quits before our luck runs out"
+            break;
+          }
+          quarters --;
+          // console.log("remaining quarters" + quarters);
+          }
+          console.log("All quarters wasted.");
+        }
+
+        //this is as as for loop
+
+        // for(var i=quarters;i>0;i--){
+        //   var chance = Math.floor(Math.random()*100);
+        //   // console.log(chance);
+        //   if (chance === Math.floor(Math.random()*100)){
+        //     // console.log(quarters,"---")
+        //     quarters += Math.floor(Math.random()*50+50);
+        //     console.log("You won! Remaining quarters: " + quarters);
+        //     // console.log("---",quarters);
+        //   }
+        // }
+        //   console.log("All quarters wasted.");
+        // }
+        // randomChance(1);
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
